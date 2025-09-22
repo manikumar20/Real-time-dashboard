@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1976d2" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <style>
+      /* Base background for initial paint before React loads - no libs */
+      html, body, #root { height: 100%; }
+      body {
+        margin: 0;
+        background: linear-gradient(135deg, #0f172a 0%, #111827 35%, #0b1020 100%) !important;
+        color: #e5e7eb;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      }
+      /* Ensure any default white surfaces are transparent */
+      * { background-color: transparent; }
+    </style>
+    <title>RealTime Dashboard</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Force background for entire project without any packages
+      (function() {
+        var html = document.documentElement;
+        var body = document.body;
+        html.style.height = '100%';
+        body.style.height = '100%';
+        body.style.margin = '0';
+        body.style.background = 'linear-gradient(135deg, #0f172a 0%, #111827 35%, #0b1020 100%)';
+        body.style.color = '#e5e7eb';
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+  </html>
+
+
